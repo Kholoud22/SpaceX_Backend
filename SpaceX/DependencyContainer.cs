@@ -1,0 +1,5 @@
+﻿using SpaceX.Infrastructure;using SpaceX.Infrastructure.Configurations;using SpaceX.Infrastructure.Proxies;using MediatR;using SpaceX.Application;
+
+namespace SpaceX.API{    public static class DependencyContainer    {        public static void RegisterServices(this IServiceCollection services, IConfiguration configuration)        {            services.AddDistributedMemoryCache();            services.AddSingleton<ICacheService, MemoryCacheService>();            services.AddScoped<IHttpRequestService, HttpRequestService>();            services.AddScoped<ILaunchProxy, LaunchProxy>();
+
+            services.AddMediatR(x => x.RegisterServicesFromAssemblies(typeof(ApplicationLayer).Assembly));            services.Configure<SpaceXConfiguration>(configuration.GetSection("SpaceXConfiguration"));        }    }}

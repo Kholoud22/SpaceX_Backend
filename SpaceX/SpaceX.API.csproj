@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Serilog" Version="2.11.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Serilog.Exceptions" Version="8.3.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpaceX.Application\SpaceX.Application.csproj" />
+    <ProjectReference Include="..\SpaceX.Infastructure\SpaceX.Infrastructure\SpaceX.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
